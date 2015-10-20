@@ -1,7 +1,7 @@
 $(document).ready(
 	function() {
-		var rows = 16;
-		var cols = 16;
+		var rows = 50;
+		var cols = 100;
 		
 		var table = document.getElementById("board");
 		
@@ -9,7 +9,8 @@ $(document).ready(
 			var row = table.insertRow(i);
 			for (j = 0; j < cols; j++) {
 				var cell =  row.insertCell(j);
-				cell.innerHTML = "NEW CELL";
+				// cell.innerHTML = "NEW CELL";
+				cell.className = "board-cell";
 			}
 		}
 	}

@@ -19,7 +19,7 @@ div {
 }
 
 .div-frame {
-	padding: 1% 1% 1% 1%;
+	padding: 5px 5px 5px 5px;
 
 	width: 80%;
 	min-width: 980px;
@@ -28,15 +28,17 @@ div {
 	margin-right: auto;
 	margin-top: 10px;
 
-	/*
-	border: 5px solid red;
-	*/
+	/* border is only enabled for testing purposes.*/
+	/* avoid sub-pixle calculations
+	 * by setting border width to 3px.*/
+	border: 3px dotted red;
 }
 
 #menu-frame {
 	min-height: 61px;
 
 	text-align: center;
+	vertical-align: middle;
 }
 
 #board-frame {
@@ -49,10 +51,16 @@ div {
 #board {
 	width: 100%;
 	height: 100%;
+
+	/* border is only enabled for testing purposes.*/
 	/* avoid sub-pixle calculations
 	 * by setting border width to 3px.*/
-	border: 3px solid black;"
+	border: 3px dotted blue;
 
-	margin: 1% 1% 1% 1%;
-	padding: 1% 1% 1% 1%;
+	border-collapse: separate;
+	border-spacing: 1px 1px;
+}
+
+.board-cell {
+	border: 1px solid black;
 }
