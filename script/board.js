@@ -1,7 +1,7 @@
 $(document).ready(
 	function() {
-		var rows = 50;
-		var cols = 100;
+		var rows = 16;
+		var cols = 2*rows;
 		
 		var table = document.getElementById("board");
 		
