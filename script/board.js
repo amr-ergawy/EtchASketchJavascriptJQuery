@@ -24,5 +24,29 @@ var boardLayout = function(rows, cols)
 	cellWidth > cellHeight ? cellWidth = cellHeight : cellHeight = cellWidth;
 	console.log('square-cell: '+cellWidth+'x'+cellHeight);
 
+	var boardRowsList = document.getElementById("board-rows-list");
+
+	for (i = 0; i < rows; i++) {
+		console.log('adding row: '+i);
+		var boardRowLiNode = createBoardRow(100+"px", 30+"px");
+		boardRowsList.appendChild(boardRowLiNode);
+	}
+
 	console.log('done with board layout')
+}
+
+var createBoardRow = function(width, height) {
+	var liNode;
+	var divNode;
+
+	divNode = document.createElement("DIV");
+	divNode.appendChild(document.createTextNode("Test"));
+	divNode.className = "board-row";
+	divNode.style.width = width; // 100+"px";
+	divNode.style.height = height; // 30+"px";
+
+	liNode = document.createElement("LI");
+	liNode.appendChild(divNode)
+
+	return liNode;
 }
