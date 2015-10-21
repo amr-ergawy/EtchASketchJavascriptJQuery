@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	console.log('handling document-ready ...');
 
-	boardLayout(10, 10);
+	boardLayout(16, 16);
 
 	console.log('handled document-ready')
 });
@@ -47,7 +47,6 @@ var createBoardRow = function(cols, cellWidth, cellHeight) {
 	var divNode;
 
 	divNode = document.createElement("DIV");
-	// divNode.appendChild(document.createTextNode("Test"));
 	divNode.className = "board-row";
 	divNode.style.minWidth = (cellWidth*cols)+"px";
 	divNode.style.height = cellHeight+"px";
