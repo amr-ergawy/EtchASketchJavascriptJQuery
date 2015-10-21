@@ -14,3 +14,8 @@
 .board-cell {
 	border: 1px solid black;
 }
+
+.board-cell:hover {
+	/* copied values from google. */
+	background-color: black;
+}
