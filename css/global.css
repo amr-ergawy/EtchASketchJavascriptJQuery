@@ -19,7 +19,7 @@ div {
 }
 
 .div-frame {
-	padding: 5px 5px 5px 5px;
+	padding: 1px 1px 1px 1px;
 
 	width: 80%;
 	min-width: 980px;
@@ -31,19 +31,17 @@ div {
 	/* border is only enabled for testing purposes.*/
 	/* avoid sub-pixle calculations
 	 * by setting border width to 3px.*/
-	border: 3px dotted red;
+	/* border: 3px dotted red; */
 }
 
 #menu-frame {
 	min-height: 61px;
-
 	text-align: center;
 }
 
 #board-frame {
 	height: 80%;
 	min-height: 490px;
-
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 

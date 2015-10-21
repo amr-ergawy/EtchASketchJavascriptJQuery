@@ -1,19 +1,25 @@
 $(document).ready(function() {
-	console.log('handling document ready ...');
+	console.log('handling document-ready ...');
 
-	boardLayout(16, 16);
+	boardLayout(10, 10);
 
-	console.log('handled document ready')
+	console.log('handled document-ready')
 });
+
+const MIN_ROWS = 2;
+const MIN_COLS = 2;
 
 var boardLayout = function(rows, cols)
 {
 	console.log('starting board layout with (rows, cols) = ('+rows+', '+cols+')');
 
-	if (rows < 2 || cols < 2) {
-		alert('board must be at least 2x2, please re-select its size!');
-		console.log('wrong board size, exiting board layout');
-		return;
+	if (rows < MIN_ROWS || cols < MIN_COLS) {
+		alert('Wrong board size, changing to the minimum of '+
+				MIN_ROWS+'x'+MIN_COLS+'.'+
+				' You can choose another size.');
+		console.log('wrong board size, changing to minimum');
+		rows = MIN_ROWS;
+		cols = MIN_COLS;
 	}
 
 	var bf = $('#board-frame');
@@ -26,27 +32,52 @@ var boardLayout = function(rows, cols)
 
 	var boardRowsList = document.getElementById("board-rows-list");
 
-	for (i = 0; i < rows; i++) {
+	var boardRowLiNode;
+	for (var i = 0; i < rows; i++) {
 		console.log('adding row: '+i);
-		var boardRowLiNode = createBoardRow(100+"px", 30+"px");
+		boardRowLiNode = createBoardRow(cols, cellWidth, cellHeight);
 		boardRowsList.appendChild(boardRowLiNode);
 	}
 
 	console.log('done with board layout')
 }
 
-var createBoardRow = function(width, height) {
+var createBoardRow = function(cols, cellWidth, cellHeight) {
 	var liNode;
 	var divNode;
 
 	divNode = document.createElement("DIV");
-	divNode.appendChild(document.createTextNode("Test"));
+	// divNode.appendChild(document.createTextNode("Test"));
 	divNode.className = "board-row";
-	divNode.style.width = width; // 100+"px";
-	divNode.style.height = height; // 30+"px";
+	divNode.style.minWidth = (cellWidth*cols)+"px";
+	divNode.style.height = cellHeight+"px";
+
+	console.log(divNode.style.width+', '+divNode.style.height);
+
+	var boardCellDivNode;
+	for (var i = 0; i < cols; i++) {
+		console.log('adding col: '+i);
+		boardCellDivNode = createBoardCell(cellWidth, cellHeight);
+		divNode.appendChild(boardCellDivNode);
+	}
 
 	liNode = document.createElement("LI");
 	liNode.appendChild(divNode)
 
 	return liNode;
+}
+
+
+var createBoardCell = function(cellWidth, cellHeight) {
+	var divNode;
+
+	divNode = document.createElement("DIV");
+	divNode.className = "board-cell";
+	// we subtract 2 from the dimensions for margin.
+	divNode.style.width = (cellWidth-2)+"px";
+	divNode.style.height = (cellHeight-2)+"px";
+
+	console.log(divNode.style.width+', '+divNode.style.height);
+
+	return divNode;
 }
