@@ -1,33 +1,37 @@
-#board-rows-list {
-
-	text-align: center;
-
-	/* border is only enabled for testing purposes.*/
-	/* avoid sub-pixle calculations
-	 * by setting border width to 3px.*/
-	border: 3px dotted blue;
+#board {
+	/* Design note:
+	 * ------------
+	 * dislaying the board as an inline-block is very important
+	 * becaue it enable the board frame to apply the "text-align: center"
+	 * to the whole board.
+	 */
+	display: inline-block;
 }
 
 .board-row {
-	/* borders are only for testing,
-	 * enabling them distorts the layout of a square grid.
+	/* borders are only for testing.
+	 * enabling borders contributes to the distortion of rows spacing.*/
+	/* border: 1px dotted green;*/
+
+	/* Design note:
+	 * ------------
+	 * displaying the row as a block is very important because
+	 * if we use display-block instead we will get spacings between the
+	 * rows.
 	 */
-	/* border: 1px dotted green; */
+	display: block;
 
-	display: inline-block;
-
-	/* just a double-check */
+	/* ensuring no effects from the row element itself.*/
+	padding-bottom: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
 }
-
 
 .board-cell {
 	border: 1px solid black;
-	margin: 1px 1px 1px 1px;
+	margin-right: 1px;
+	margin-bottom: 1px;
 	float: left;
 }
-
 
 .board-cell:hover {
 	background-color: black;

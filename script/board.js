@@ -1,13 +1,15 @@
 $(document).ready(function() {
 	console.log('handling document-ready ...');
 
-	boardLayout(20, 20);
+	boardLayout(50, 50);
 
 	console.log('handled document-ready')
 });
 
 const MIN_ROWS = 8;
 const MIN_COLS = 8;
+
+const logDims = false;
 
 var boardLayout = function(rows, cols)
 {
@@ -30,13 +32,14 @@ var boardLayout = function(rows, cols)
 	cellWidth > cellHeight ? cellWidth = cellHeight : cellHeight = cellWidth;
 	console.log('square-cell: '+cellWidth+'x'+cellHeight);
 
-	var boardRowsList = document.getElementById("board-rows-list");
+	var board = document.getElementById("board");
+	// board.style.minWidth = (2*cols*cellWidth)+"px";
 
 	var boardRowLiNode;
 	for (var i = 0; i < rows; i++) {
-		console.log('adding row: '+i);
+		if (logDims) console.log('adding row: '+i);
 		boardRowLiNode = createBoardRow(cols, cellWidth, cellHeight);
-		boardRowsList.appendChild(boardRowLiNode);
+		board.appendChild(boardRowLiNode);
 	}
 
 	console.log('done with board layout')
@@ -51,11 +54,11 @@ var createBoardRow = function(cols, cellWidth, cellHeight) {
 	divNode.style.minWidth = (cellWidth*cols)+"px";
 	divNode.style.height = cellHeight+"px";
 
-	console.log(divNode.style.minWidth+', '+divNode.style.height);
+	if (logDims) console.log(divNode.style.minWidth+', '+divNode.style.height);
 
 	var boardCellDivNode;
 	for (var i = 0; i < cols; i++) {
-		console.log('adding col: '+i);
+		if (logDims)  console.log('adding col: '+i);
 		boardCellDivNode = createBoardCell(cellWidth, cellHeight);
 		divNode.appendChild(boardCellDivNode);
 	}
@@ -76,7 +79,7 @@ var createBoardCell = function(cellWidth, cellHeight) {
 	divNode.style.width = (cellWidth-2)+"px";
 	divNode.style.height = (cellHeight-2)+"px";
 
-	console.log(divNode.style.width+', '+divNode.style.height);
+	if (logDims) console.log(divNode.style.width+', '+divNode.style.height);
 
 	return divNode;
 }
