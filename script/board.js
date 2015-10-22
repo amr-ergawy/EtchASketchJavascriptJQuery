@@ -1,13 +1,13 @@
 $(document).ready(function() {
 	console.log('handling document-ready ...');
 
-	boardLayout(16, 16);
+	boardLayout(20, 20);
 
 	console.log('handled document-ready')
 });
 
-const MIN_ROWS = 2;
-const MIN_COLS = 2;
+const MIN_ROWS = 8;
+const MIN_COLS = 8;
 
 var boardLayout = function(rows, cols)
 {
@@ -51,7 +51,7 @@ var createBoardRow = function(cols, cellWidth, cellHeight) {
 	divNode.style.minWidth = (cellWidth*cols)+"px";
 	divNode.style.height = cellHeight+"px";
 
-	console.log(divNode.style.width+', '+divNode.style.height);
+	console.log(divNode.style.minWidth+', '+divNode.style.height);
 
 	var boardCellDivNode;
 	for (var i = 0; i < cols; i++) {
@@ -60,7 +60,7 @@ var createBoardRow = function(cols, cellWidth, cellHeight) {
 		divNode.appendChild(boardCellDivNode);
 	}
 
-	liNode = document.createElement("LI");
+	liNode = document.createElement("DIV");
 	liNode.appendChild(divNode)
 
 	return liNode;
@@ -72,7 +72,7 @@ var createBoardCell = function(cellWidth, cellHeight) {
 
 	divNode = document.createElement("DIV");
 	divNode.className = "board-cell";
-	// we subtract 2 from the dimensions for margin.
+	// we subtract 2 from the dimensions for margins.
 	divNode.style.width = (cellWidth-2)+"px";
 	divNode.style.height = (cellHeight-2)+"px";
 

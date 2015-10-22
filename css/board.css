@@ -1,4 +1,5 @@
 #board-rows-list {
+
 	text-align: center;
 
 	/* border is only enabled for testing purposes.*/
@@ -8,12 +9,16 @@
 }
 
 .board-row {
-	border: 1px dotted green;
-
-	margin-left: auto;
-	margin-right: auto;
+	/* borders are only for testing,
+	 * enabling them distorts the layout of a square grid.
+	 */
+	/* border: 1px dotted green; */
 
 	display: inline-block;
+
+	/* just a double-check */
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 }
 
 
@@ -23,8 +28,8 @@
 	float: left;
 }
 
-/*
+
 .board-cell:hover {
 	background-color: black;
 }
-*/
+
