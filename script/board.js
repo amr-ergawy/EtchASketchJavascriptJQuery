@@ -24,17 +24,25 @@ var boardLayout = function(rows, cols)
 		cols = MIN_COLS;
 	}
 
-	var bf = $('#board-frame');
-	console.log('board-frame: '+bf.width()+'x'+bf.height());
-
-	var cellWidth = Math.floor(bf.width()/cols);
-	var cellHeight = Math.floor(bf.height()/rows);
+	var cellWidth = Math.floor(480/cols);
+	var cellHeight = Math.floor(480/rows);
 	cellWidth > cellHeight ? cellWidth = cellHeight : cellHeight = cellWidth;
 	console.log('square-cell: '+cellWidth+'x'+cellHeight);
 
-	var board = document.getElementById("board");
-	// board.style.minWidth = (2*cols*cellWidth)+"px";
+	/*
+	 * both the boardFrame and menu frame are set to the same
+	 * minimum width for consistency on window resize
+	 */
+	var minFramesWidth = ((2*cols)*cellWidth)+"px";
+	frame = $('#menu-frame');
+	frame.css("minWidth", minFramesWidth);
+	var frame = $('#board-frame');
+	frame.css("minWidth", minFramesWidth);
 
+	var minBoardFrameHeight = (rows*cellHeight)+"px";
+	frame.css("minHeight", minBoardFrameHeight);
+
+	var board = document.getElementById("board");
 	var boardRowLiNode;
 	for (var i = 0; i < rows; i++) {
 		if (logDims) console.log('adding row: '+i);
