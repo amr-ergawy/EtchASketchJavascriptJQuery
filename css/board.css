@@ -6,6 +6,8 @@
 	 * to the whole board.
 	 */
 	display: inline-block;
+
+	background: #fff;
 }
 
 .board-row {

@@ -4,8 +4,13 @@
 
 #div-menu-buttons {
 	display: inline-block;
-	/* to prevent distortion on resizing*/
-	/* save place for three buttons */
+
+	/* to prevent distortion on resizing,
+	 * save place for three buttons */
+	/* TODO: perhaps this needs to be linked to
+	 * the calculations of the minWidth of the menu
+	 * in the board.js?
+	 */
 	min-width: 810px;
 }
 

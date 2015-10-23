@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-	background: #fff;
+	background: white url(../img/logo-less-bright.png) repeat top left;
 	color: #222;
 }
 
@@ -30,7 +30,7 @@ div {
 	/* border is only enabled for testing purposes.*/
 	/* avoid sub-pixle calculations
 	 * by setting border width to 3px.*/
-	border: 1px dotted red;
+	/* border: 1px dotted red; */
 
 	text-align: center;
 }

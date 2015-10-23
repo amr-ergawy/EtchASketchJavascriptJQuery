@@ -1,18 +1,26 @@
-$(document).ready(function() {
-	console.log('handling document-ready ...');
-
-	boardLayout(50, 50);
-
-	console.log('handled document-ready')
-});
-
 const MIN_ROWS = 8;
 const MIN_COLS = 8;
 
+const MAX_ROWS = 100;
+const MAX_COLS = 100;
+
+const DEFAULT_ROWS = 50;
+const DEFAULT_COLS = 50;
+
+const BOARD_WIDTH_PX = 960;
+const BOARD_HEIGHT_PX = 960;
+
 const logDims = false;
 
-var boardLayout = function(rows, cols)
-{
+$(document).ready(function() {
+	console.log('handling document-ready ...');
+
+	boardLayout(DEFAULT_ROWS, DEFAULT_COLS);
+
+	console.log('handled document-ready');
+});
+
+var boardLayout = function(rows, cols) {
 	console.log('starting board layout with (rows, cols) = ('+rows+', '+cols+')');
 
 	if (rows < MIN_ROWS || cols < MIN_COLS) {
@@ -24,8 +32,8 @@ var boardLayout = function(rows, cols)
 		cols = MIN_COLS;
 	}
 
-	var cellWidth = Math.floor(480/cols);
-	var cellHeight = Math.floor(480/rows);
+	var cellWidth = Math.floor(BOARD_WIDTH_PX/cols);
+	var cellHeight = Math.floor(BOARD_HEIGHT_PX/rows);
 	cellWidth > cellHeight ? cellWidth = cellHeight : cellHeight = cellWidth;
 	console.log('square-cell: '+cellWidth+'x'+cellHeight);
 
@@ -72,11 +80,10 @@ var createBoardRow = function(cols, cellWidth, cellHeight) {
 	}
 
 	liNode = document.createElement("DIV");
-	liNode.appendChild(divNode)
+	liNode.appendChild(divNode);
 
 	return liNode;
 }
-
 
 var createBoardCell = function(cellWidth, cellHeight) {
 	var divNode;
