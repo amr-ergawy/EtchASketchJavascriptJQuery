@@ -20,13 +20,13 @@
 	line-height: 27px;
 
 	/* copied values from google. */
-	background-color: #f2f2f2;
-	border: 1px solid #f2f2f2;
-	border-radius: 2px;
-	color: #757575;
+	background-color: #d22323;
+	border: 3px solid #e3ff00;
+	border-radius: 10px;
+	color: #e3ff00;
 	cursor: default;
 	font-family: arial,sans-serif;
-	font-size: 13px;
+	font-size: 18px;
 	font-weight: bold;
 	margin: 11px 4px;
 	padding: 0 16px;
@@ -40,8 +40,8 @@
 
 #div-menu-buttons .button:hover {
 	/* copied values from google. */
-	background-color: #f8f8f8;
-	border: 1px solid #c6c6c6;
+	background-color: #ff0000;
+	border: 5px solid #e3ff00;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-	color: #222;
+	color: #e3ff00;
 }

@@ -25,7 +25,7 @@
 	clear: both; /* This made it to work on IE*/
 
 	/* ensuring no effects from the row element itself.*/
-	padding-bottom: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 }
 
