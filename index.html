@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8"/>
+
 		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
 		<link type="text/css" rel="stylesheet" href="css/global.css"/>
 		<link type="text/css" rel="stylesheet" href="css/menu.css"/>
 		<link type="text/css" rel="stylesheet" href="css/board.css"/>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="jquery/smoothness/jquery-ui.css"/>
+		<script src="jquery/jquery-1.10.2.js"></script>
+		<script src="jquery/jquery-ui-1.11.4.js"></script>
+
 		<script type="text/javascript" src="script/board.js"></script>
+
 		<title>Etch-A-Sketch</title>
 	</head>
 	<body>
@@ -15,7 +22,7 @@
 				<form>
 					<div id="div-menu-buttons-container">
 						<div id="div-menu-buttons">
-							<input class="button" type="submit" value="Resize grid">
+							<input id="resize-button" class="button" type="submit" value="Resize grid">
 							<input class="button" type="submit" value="Choose color">
 							<input class="button" type="submit" value="Clear grid">
 						</div>
@@ -29,5 +36,9 @@
 			</div>
 		</div>
 	</body>
+	<!-- start: including the board-size dialog -->
+	<link type="text/css" rel="stylesheet" href="css/size-dialog.css"/>
+	<script type="text/javascript" src="script/size-dialog.js"></script>
+	<div id="size-dialog"></div>
+	<!-- end: including the board-size dialog -->
 </html>
-

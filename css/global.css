@@ -1,7 +1,7 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	height: 99%;
+	height: 100%;
 }
 
 body {
@@ -14,7 +14,7 @@ div {
 }
 
 #div-container {
-	height: 99%;
+	height: 100%;
 	position: relative;
 }
 
@@ -30,18 +30,15 @@ div {
 	/* border is only enabled for testing purposes.*/
 	/* avoid sub-pixle calculations
 	 * by setting border width to 3px.*/
-	/* border: 1px dotted red; */
+	border: 1px dotted yellow;
 
 	text-align: center;
 }
 
 #menu-frame {
-	/* min-width: 810px; */
 	min-height: 60px;
 }
 
 #board-frame {
-	/* min-width: 540px; */
-	/* min-height: 480px; */
 	margin-bottom: 5px;
 }

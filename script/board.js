@@ -17,6 +17,8 @@ $(document).ready(function() {
 
 	boardLayout(DEFAULT_ROWS, DEFAULT_COLS);
 
+	loadForm();
+
 	console.log('handled document-ready');
 });
 
@@ -97,4 +99,18 @@ var createBoardCell = function(cellWidth, cellHeight) {
 	if (logDims) console.log(divNode.style.width+', '+divNode.style.height);
 
 	return divNode;
+}
+
+var loadForm = function() {
+	console.log('started loading form');
+	$('#size-dialog').load('size-dialog.html #board-size-dialog-form', null, function(responseText, textStatus, xhr) {
+		console.log("#size-dialog loading result: "+textStatus);
+		initDialog();
+		$("#resize-button").on("click", function(event) {
+			event.preventDefault();
+			console.log("openning dialog");
+			dialog.dialog("open");
+		});
+	});
+	console.log('finished loading form');
 }
