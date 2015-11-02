@@ -103,14 +103,11 @@ var createBoardCell = function(cellWidth, cellHeight) {
 
 var loadForm = function() {
 	console.log('started loading form');
-	$('#size-dialog').load('size-dialog.html #board-size-dialog-form', null, function(responseText, textStatus, xhr) {
-		console.log("#size-dialog loading result: "+textStatus);
-		initDialog();
-		$("#resize-button").on("click", function(event) {
-			event.preventDefault();
-			console.log("openning dialog");
-			dialog.dialog("open");
-		});
+	initDialog();
+	$("#resize-button").on("click", function(event) {
+		event.preventDefault();
+		console.log("openning dialog");
+		dialog.dialog("open");
 	});
 	console.log('finished loading form');
 }

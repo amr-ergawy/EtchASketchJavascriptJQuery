@@ -54,4 +54,3 @@ var initDialog = function() {
 	
 	console.log("finished initiating dialog");
 };
-

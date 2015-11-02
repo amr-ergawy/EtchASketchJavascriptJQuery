@@ -12,6 +12,11 @@
 		<script src="jquery/jquery-1.10.2.js"></script>
 		<script src="jquery/jquery-ui-1.11.4.js"></script>
 
+		<!-- start: including the style and script for board-size dialog -->
+		<link type="text/css" rel="stylesheet" href="css/size-dialog.css"/>
+		<script type="text/javascript" src="script/size-dialog.js"></script>
+		<!-- end: including the style and script for board-size dialog -->
+
 		<script type="text/javascript" src="script/board.js"></script>
 
 		<title>Etch-A-Sketch</title>
@@ -36,9 +41,19 @@
 			</div>
 		</div>
 	</body>
-	<!-- start: including the board-size dialog -->
-	<link type="text/css" rel="stylesheet" href="css/size-dialog.css"/>
-	<script type="text/javascript" src="script/size-dialog.js"></script>
-	<div id="size-dialog"></div>
-	<!-- end: including the board-size dialog -->
+	<!-- <div id="size-dialog"></div> -->
+	<div id="board-size-dialog-form" title="Choose board size">
+		<form>
+			<fieldset>
+				<p>
+					Rows:
+				</p>
+				<input type="text" id="rowsSpinner" class="spinner" value="50" />
+				<p >
+					Columns:
+				</p>
+				<input type="text" id="colsSpinner" class="spinner" value="50" />
+			</fieldset>
+		</form>
+	</div>
 </html>
