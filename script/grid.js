@@ -18,6 +18,8 @@ $(document).ready(function() {
 
 	boardLayout();
 
+	loadForm();
+
 	console.log('handled document-ready');
 });
 
@@ -159,4 +161,15 @@ var createBoardCell = function() {
 	if (logDims) console.log(divNode.style.width+', '+divNode.style.height);
 
 	return divNode;
+}
+
+var loadForm = function() {
+	console.log('started loading form');
+	initDialog();
+	$("#resize-button").on("click", function(event) {
+		event.preventDefault();
+		console.log("openning dialog");
+		dialog.dialog("open");
+	});
+	console.log('finished loading form');
 }
