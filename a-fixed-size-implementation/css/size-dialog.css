@@ -1,0 +1,13 @@
+.spinner input {
+	width: 100px;
+}
+
+.ui-dialog .ui-dialog-content {
+	background-color: #d22323;
+	color: #e3ff00;
+	font-weight: bold;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+	background: white url(../img/logo-less-bright.png) repeat top left;
+}

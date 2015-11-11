@@ -1,42 +1,29 @@
-#board {
-	/* Design note:
-	 * ------------
-	 * dislaying the board as an inline-block is very important
-	 * becaue it enable the board frame to apply the "text-align: center"
-	 * to the whole board.
-	 */
-	display: inline-block;
-
-	background: #fff;
-}
-
 .board-row {
-	/* borders are only for testing.
-	 * enabling borders contributes to the distortion of rows spacing.*/
-	/* border: 1px dotted green;*/
-
-	/* Design note:
-	 * ------------
-	 * displaying the row as a block is very important because
-	 * if we use display-block instead we will get spacings between the
-	 * rows.
+	/* I will not use borders,
+	 * I will use only the margins as separators.
 	 */
+	/* border: 1px solid black; */
+
+	margin-left: auto;
+	margin-right: auto;
+
 	display: block;
 	clear: both; /* This made it to work on IE*/
 
-	/* ensuring no effects from the row element itself.*/
-	padding: 0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
+	text-align: center;
 }
 
 .board-cell {
-	border: 1px solid black;
-	margin-right: 1px;
-	margin-bottom: 1px;
+	/* I will not use borders,
+	 * I will use only the margins as separators.
+	 */
+	/* border: 1% solid black; */
+
+	margin-right: 0.2%;
+	margin-bottom: 0.2%;
+
+	background-color: white;
+	/*background-color: #FAEBD7;*/ /* antique white */
+
 	float: left;
 }
-
-.board-cell:hover {
-	background-color: black;
-}
-

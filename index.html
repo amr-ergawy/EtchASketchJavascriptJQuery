@@ -1,55 +1,35 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8"/>
+<head>
 
-		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
-		<link type="text/css" rel="stylesheet" href="css/global.css"/>
-		<link type="text/css" rel="stylesheet" href="css/menu.css"/>
-		<link type="text/css" rel="stylesheet" href="css/board.css"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-		<link rel="stylesheet" href="jquery/smoothness/jquery-ui.css"/>
-		<script src="jquery/jquery-1.10.2.js"></script>
-		<script src="jquery/jquery-ui-1.11.4.js"></script>
+	<title>Viewport trial</title>
 
-		<!-- start: including the style and script for board-size dialog -->
-		<link type="text/css" rel="stylesheet" href="css/size-dialog.css"/>
-		<script type="text/javascript" src="script/size-dialog.js"></script>
-		<!-- end: including the style and script for board-size dialog -->
+	<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/global.css" />
+	<link type="text/css" rel="stylesheet" href="css/menu.css"/>
+	<link type="text/css" rel="stylesheet" href="css/board.css"/>
 
-		<script type="text/javascript" src="script/board.js"></script>
+	<script src="jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="script/grid.js"></script>
 
-		<title>Etch-A-Sketch</title>
-	</head>
-	<body>
-		<div id="div-container">
-			<div id="menu-frame" class="div-frame">
-				<form>
-					<div id="div-menu-buttons-container">
-						<div id="div-menu-buttons">
-							<input id="resize-button" class="button" type="submit" value="Resize grid">
-							<input class="button" type="submit" value="Choose color">
-							<input class="button" type="submit" value="Clear grid">
-						</div>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header" class="common-settings">
+			<form>
+				<div id="menu-buttons-container">
+					<div id="menu-buttons">
+						<input id="resize-button" class="button" type="submit" value="Resize grid">
+						<input class="button" type="submit" value="Choose color">
+						<input class="button" type="submit" value="Clear grid">
 					</div>
-				</form>
-			</div>
-			<div id="board-frame" class="div-frame">
-				<div id="board">
-					<!-- board rows are added programmatically -->
 				</div>
-			</div>
+			</form>
 		</div>
-	</body>
-	<!-- <div id="size-dialog"></div> -->
-	<div id="board-size-dialog-form" title="Choose board size">
-		<form>
-			<fieldset>
-				<p>Rows</p>
-				<input type="text" id="rowsSpinner" class="spinner" value="50" />
-				<p >Columns</p>
-				<input type="text" id="colsSpinner" class="spinner" value="50" />
-			</fieldset>
-		</form>
+		<div id="content" class="common-settings"></div>
 	</div>
+</body>
+
 </html>

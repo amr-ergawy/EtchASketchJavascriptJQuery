@@ -1,47 +1,60 @@
-#div-menu-buttons-container {
-	text-align: center;
+#header form {
+	height: 100%;
 }
 
-#div-menu-buttons {
+#menu-buttons-container {
+	text-align: center;
+
+	height: 100%;
+}
+
+#menu-buttons {
 	display: inline-block;
 
-	/* to prevent distortion on resizing,
-	 * save place for three buttons */
-	/* TODO: perhaps this needs to be linked to
-	 * the calculations of the minWidth of the menu
-	 * in the board.js?
+	height: 100%;
+
+	/* I will not use borders,
+	 * I will use only the margins as separators.
 	 */
-	min-width: 810px;
+	/* border: 1px solid black; */
 }
 
-#div-menu-buttons .button {
-	/* copied values from google. */
-	height: 36px;
-	line-height: 27px;
+#menu-buttons .button {
+	/* some "parameter names", and not values,
+	 * are copied from google search page. */
 
-	/* copied values from google. */
+	/*heights*/
+	height: 80%;
+	line-height: 80%;
+
+	/*min-width*/
+	min-width: 54px;
+
+	/*font configurations*/
+	font-size: 24px;
+	font-family: arial,sans-serif;
+	font-weight: bold;
+
+	/*colors, border, and cursor*/
 	background-color: #d22323;
 	border: 3px solid #e3ff00;
 	border-radius: 10px;
 	color: #e3ff00;
 	cursor: default;
-	font-family: arial,sans-serif;
-	font-size: 18px;
-	font-weight: bold;
+
+	/* marging, padding, and text-align*/
 	margin: 11px 4px;
 	padding: 0 16px;
 	text-align: center;
-	
-	/* keep the same button min-width 
-	 * as copied from google.
-	 */
-	min-width: 54px;
 }
 
-#div-menu-buttons .button:hover {
-	/* copied values from google. */
+#menu-buttons .button:hover {
+	/* all "parameter names", and not values,
+	 * are copied from google search page. */
+
 	background-color: #ff0000;
 	border: 5px solid #e3ff00;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	color: #e3ff00;
+
 }
