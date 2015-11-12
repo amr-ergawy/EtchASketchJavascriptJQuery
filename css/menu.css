@@ -1,17 +1,16 @@
-#header form {
-	height: 100%;
-}
-
 #menu-buttons-container {
 	/* I will not use borders,
 	 * I will use only the margins as separators.
 	 */
 	border: 3px solid blue;
 
-
 	text-align: center;
 
 	height: 100%;
+
+	display: inline-block;
+
+	min-width: 860px;
 }
 
 #menu-buttons {
@@ -27,13 +26,16 @@
 	float: left;
 }
 
+#menu-buttons form {
+	height: 100%;
+}
+
 #menu-buttons .button {
 	/* some "parameter names", and not values,
 	 * are copied from google search page. */
 
 	/*heights*/
-	height: 80%;
-	line-height: 80%;
+	height: 50px;
 
 	/*min-width*/
 	min-width: 54px;

@@ -1,6 +1,6 @@
 #color-picker {
 	/*enable border only for testing*/
-	border: 1px solid red;
+	border: 3px solid black;
 	
 	
 	display: inline-block;
@@ -8,7 +8,9 @@
 	min-width: 275px;
 	min-height: 50px;
 	
-	float: right;
+	float: left;
+
+	margin: 11px 4px;
 }
 
 

@@ -43,6 +43,8 @@ body {
 #header {
 	height: 10%;
 	min-height: 37px;
+
+	text-align: center;
 }
 
 #content {
