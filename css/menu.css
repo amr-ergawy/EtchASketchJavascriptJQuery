@@ -30,12 +30,26 @@
 	height: 100%;
 }
 
-#menu-buttons .button {
-	/* some "parameter names", and not values,
-	 * are copied from google search page. */
+.menu-element {
 
 	/*heights*/
 	height: 50px;
+
+	/* marging, padding, and text-align*/
+	margin: 11px 4px;
+	padding: 0 16px;
+	text-align: center;
+
+	/*colors, border, and cursor*/
+	background-color: #d22323;
+	border: 3px solid #e3ff00;
+	color: #e3ff00;
+	cursor: default;
+}
+
+#menu-buttons .button {
+	/* some "parameter names", and not values,
+	 * are copied from google search page. */
 
 	/*min-width*/
 	min-width: 54px;
@@ -44,18 +58,6 @@
 	font-size: 24px;
 	font-family: arial,sans-serif;
 	font-weight: bold;
-
-	/*colors, border, and cursor*/
-	background-color: #d22323;
-	border: 3px solid #e3ff00;
-	border-radius: 10px;
-	color: #e3ff00;
-	cursor: default;
-
-	/* marging, padding, and text-align*/
-	margin: 11px 4px;
-	padding: 0 16px;
-	text-align: center;
 }
 
 #menu-buttons .button:hover {
