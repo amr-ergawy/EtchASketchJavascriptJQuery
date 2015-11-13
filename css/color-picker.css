@@ -24,7 +24,11 @@
 #color-picker-viewer {
 	/*enable border only for testing*/
 	/* border: 1px solid green; */
-	background-color: green;
+
+	/* hsl color are only supported in
+	 * IE9+, Firefox, Chrome, Safari, and in Opera 10+
+	 */
+	background-color: hsl(0, 0%, 50%);
 
 	width: 40px;
 	height: 40px;
