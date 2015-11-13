@@ -1,39 +1,21 @@
-#menu-buttons-container {
+#menu-container {
 	/* I will not use borders,
 	 * I will use only the margins as separators.
 	 */
-	/* border: 3px solid blue; */
-
-	text-align: center;
+	/*border: 3px solid blue;*/
 
 	height: 100%;
-
-	display: inline-block;
 
 	min-width: 860px;
-}
 
-#menu-buttons {
 	display: inline-block;
-
-	height: 100%;
-
-	/* I will not use borders,
-	 * I will use only the margins as separators.
-	 */
-	/* border: 3px solid black; */
-
-	float: left;
-}
-
-#menu-buttons form {
-	height: 100%;
 }
 
 .menu-element {
 
 	/*heights*/
 	height: 50px;
+	line-height: 50px;
 
 	/* marging, padding, and text-align*/
 	margin: 11px 4px;
@@ -45,12 +27,18 @@
 	border: 3px solid #e3ff00;
 	color: #e3ff00;
 	cursor: default;
+
+	float: left;
 }
 
-#menu-buttons .button {
-	/* some "parameter names", and not values,
-	 * are copied from google search page. */
+.menu-element:hover {
+	/*colors and borders*/
+	background-color: #ff0000;
+	border: 5px solid #e3ff00;
+	color: #e3ff00;
+}
 
+.button {
 	/*min-width*/
 	min-width: 54px;
 
@@ -58,15 +46,4 @@
 	font-size: 24px;
 	font-family: arial,sans-serif;
 	font-weight: bold;
-}
-
-#menu-buttons .button:hover {
-	/* all "parameter names", and not values,
-	 * are copied from google search page. */
-
-	background-color: #ff0000;
-	border: 5px solid #e3ff00;
-	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-	color: #e3ff00;
-
 }
