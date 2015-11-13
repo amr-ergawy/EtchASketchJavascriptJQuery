@@ -2,7 +2,7 @@
 	/* I will not use borders,
 	 * I will use only the margins as separators.
 	 */
-	border: 3px solid blue;
+	/* border: 3px solid blue; */
 
 	text-align: center;
 
@@ -21,7 +21,7 @@
 	/* I will not use borders,
 	 * I will use only the margins as separators.
 	 */
-	border: 3px solid black;
+	/* border: 3px solid black; */
 
 	float: left;
 }

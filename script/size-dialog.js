@@ -29,7 +29,7 @@ var initDialog = function() {
 	dialog = $("#board-size-dialog-form").dialog({
 		autoOpen : false,
 		// height : 350,
-		// width : 350,
+		width : 500,
 		resizable: false,
 		modal : true,
 		buttons : {

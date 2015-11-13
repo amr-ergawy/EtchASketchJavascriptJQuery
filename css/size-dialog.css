@@ -1,5 +1,26 @@
-.spinner input {
-	width: 100px;
+#board-size-dialog-form form {
+	/**
+	 * 	enabled border only for testing.
+	 */
+	/* border: 1px solid black; */
+
+	text-align:center;
+}
+
+#board-size-dialog-form form fieldset {
+	/**
+	 * 	enabled border only for testing.
+	 */
+	/* border: 1px solid green; */
+}
+
+.spinner {
+	/**
+	 * 	enabled border only for testing.
+	 */
+	/* border: 1px solid blue; */
+
+	width: 200px;
 }
 
 .ui-dialog .ui-dialog-content {
