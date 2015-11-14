@@ -20,6 +20,10 @@ $(document).ready(function() {
 
 	loadForm();
 
+	initTools();
+
+	loadColorPicker();
+
 	console.log('handled document-ready');
 });
 
@@ -163,13 +167,58 @@ var createBoardCell = function() {
 	return divNode;
 }
 
+var choosePen = function() {
+	// console.log("choosing pen");
+	$('body').css('cursor', 'pointer');
+}
+
+var chooseNoTool = function() {
+	// console.log("choosing no tool");
+	$('body').css('cursor', 'auto');
+}
+
+var chooseEraser = function() {
+	// console.log("choosing eraser");
+	$('body').css('cursor', 'cell');
+}
+
 var loadForm = function() {
 	console.log('started loading form');
+
 	initDialog();
+
 	$("#tester-button").on("click", function(event) {
 		event.preventDefault();
+		chooseNoTool();
 		console.log("openning dialog");
 		dialog.dialog("open");
 	});
+
 	console.log('finished loading form');
+}
+
+var initTools = function() {
+	console.log('started initiating tools');
+
+	$("#pen-button").on("click", function(event) {
+		event.preventDefault();
+		choosePen();
+	});
+
+	$("#eraser-button").on("click", function(event) {
+		event.preventDefault();
+		chooseEraser();
+	});
+
+	$("#clear-all-button").on("click", function(event) {
+		event.preventDefault();
+		chooseNoTool();
+	});
+
+	$("#resize-grid-button").on("click", function(event) {
+		event.preventDefault();
+		chooseNoTool();
+	});
+
+	console.log('finished initiating tools');
 }
