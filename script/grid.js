@@ -166,7 +166,7 @@ var createBoardCell = function() {
 var loadForm = function() {
 	console.log('started loading form');
 	initDialog();
-	$("#resize-button").on("click", function(event) {
+	$("#tester-button").on("click", function(event) {
 		event.preventDefault();
 		console.log("openning dialog");
 		dialog.dialog("open");

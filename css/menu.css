@@ -2,11 +2,11 @@
 	/* I will not use borders,
 	 * I will use only the margins as separators.
 	 */
-	/*border: 3px solid blue;*/
+	/* border: 3px solid blue; */
 
 	height: 100%;
 
-	min-width: 560px;
+	min-width: 980px;
 
 	display: inline-block;
 }
