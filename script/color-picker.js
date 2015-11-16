@@ -1,7 +1,10 @@
+var color = "hsl(0, 0%, 50%)";
+
 var loadColorPicker = function() {
 
 	var updateColor = function(event, ui) {
 		$("#color-picker-viewer").css("background-color", "hsl(0, 0%, "+ui.value+"%)");
+		color = "hsl(0, 0%, "+ui.value+"%)";
 	};
 
 	$("#color-picker-slider").slider({

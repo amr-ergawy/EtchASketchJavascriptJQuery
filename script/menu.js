@@ -26,7 +26,7 @@ var chooseNoTool = function() {
 var applyTool = function(gridCell) {
 	switch(activeTool) {
 		case TOOL_PEN:
-			gridCell.css('background-color', 'black');
+			gridCell.css('background-color', color);
 			break;
 		case TOOL_ERASER:
 			gridCell.css('background-color', 'white');
@@ -82,24 +82,20 @@ var initTools = function() {
 	});
 
 	$("body").mousedown(function(event) {
-		/* we ill not prevent default here,
-		 * we only need to record the mousedown.
-		 */
 		// Logging is only enabled for debugging.
 		// console.log("button down: "+event.button);
 		if (event.button == 0) {
+			event.preventDefault();
 			// on left-hand mouse configs, the values are inverted.
 			clickMouseButtonDown = true;
 		}
 	});
 
 	$("body").mouseup(function(event) {
-		/* we ill not prevent default here,
-		 * we only need to record the mouseup.
-		 */
 		// Logging is only enabled for debugging.
 		// console.log("button up: "+event.button);
 		if (event.button == 0) {
+			event.preventDefault();
 			// on left-hand mouse configs, the values are inverted.
 			clickMouseButtonDown = false;
 		}

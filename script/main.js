@@ -166,4 +166,3 @@ var createBoardCell = function() {
 
 	return divNode;
 }
-
