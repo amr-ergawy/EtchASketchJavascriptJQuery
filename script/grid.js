@@ -197,6 +197,8 @@ var loadForm = function() {
 	console.log('finished loading form');
 }
 
+var clickMouseButtonDown = false;
+
 var initTools = function() {
 	console.log('started initiating tools');
 
@@ -218,6 +220,44 @@ var initTools = function() {
 	$("#resize-grid-button").on("click", function(event) {
 		event.preventDefault();
 		chooseNoTool();
+	});
+
+	$(".board-cell").mouseover(function(event) {
+		event.preventDefault();
+		if (clickMouseButtonDown) {
+			// on left-hand mouse configs, the values are inverted.
+			$(this).css('background-color', 'black');
+		}
+	});
+
+	$(".board-cell").click(function(event) {
+		event.preventDefault();
+		if (event.button == 0) {
+			// on left-hand mouse configs, the values are inverted.
+			$(this).css('background-color', 'black');
+		}
+	});
+
+	$("body").mousedown(function(event) {
+		/* we ill not prevent default here,
+		 * we only need to record the mousedown.
+		 */
+		console.log("button down: "+event.button);
+		if (event.button == 0) {
+			// on left-hand mouse configs, the values are inverted.
+			clickMouseButtonDown = true;
+		}
+	});
+
+	$("body").mouseup(function(event) {
+		/* we ill not prevent default here,
+		 * we only need to record the mouseup.
+		 */
+		console.log("button up: "+event.button);
+		if (event.button == 0) {
+			// on left-hand mouse configs, the values are inverted.
+			clickMouseButtonDown = false;
+		}
 	});
 
 	console.log('finished initiating tools');
