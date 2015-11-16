@@ -167,21 +167,6 @@ var createBoardCell = function() {
 	return divNode;
 }
 
-var choosePen = function() {
-	// console.log("choosing pen");
-	$('body').css('cursor', 'pointer');
-}
-
-var chooseNoTool = function() {
-	// console.log("choosing no tool");
-	$('body').css('cursor', 'auto');
-}
-
-var chooseEraser = function() {
-	// console.log("choosing eraser");
-	$('body').css('cursor', 'cell');
-}
-
 var loadForm = function() {
 	console.log('started loading form');
 
@@ -197,7 +182,43 @@ var loadForm = function() {
 	console.log('finished loading form');
 }
 
+const TOOL_NONE = 0;
+const TOOL_PEN = 1;
+const TOOL_ERASER = 2;
+
+var activeTool = TOOL_NONE;
 var clickMouseButtonDown = false;
+
+var choosePen = function() {
+	// console.log("choosing pen");
+	$('body').css('cursor', 'pointer');
+	activeTool = TOOL_PEN;
+}
+
+var chooseEraser = function() {
+	// console.log("choosing eraser");
+	$('body').css('cursor', 'cell');
+	activeTool = TOOL_ERASER;
+}
+
+var chooseNoTool = function() {
+	// console.log("choosing no tool");
+	$('body').css('cursor', 'auto');
+	activeTool = TOOL_NONE;
+}
+
+var applyTool = function(gridCell) {
+	switch(activeTool) {
+		case TOOL_PEN:
+			gridCell.css('background-color', 'black');
+			break;
+		case TOOL_ERASER:
+			gridCell.css('background-color', 'white');
+			break;
+		default:
+			// TOOL_NONE, do no thing.
+	}
+}
 
 var initTools = function() {
 	console.log('started initiating tools');
@@ -226,7 +247,7 @@ var initTools = function() {
 		event.preventDefault();
 		if (clickMouseButtonDown) {
 			// on left-hand mouse configs, the values are inverted.
-			$(this).css('background-color', 'black');
+			applyTool($(this));
 		}
 	});
 
@@ -234,7 +255,7 @@ var initTools = function() {
 		event.preventDefault();
 		if (event.button == 0) {
 			// on left-hand mouse configs, the values are inverted.
-			$(this).css('background-color', 'black');
+			applyTool($(this));
 		}
 	});
 
