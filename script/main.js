@@ -167,17 +167,3 @@ var createBoardCell = function() {
 	return divNode;
 }
 
-var loadForm = function() {
-	console.log('started loading form');
-
-	initDialog();
-
-	$("#tester-button").on("click", function(event) {
-		event.preventDefault();
-		chooseNoTool();
-		console.log("openning dialog");
-		dialog.dialog("open");
-	});
-
-	console.log('finished loading form');
-}

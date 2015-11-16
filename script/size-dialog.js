@@ -54,3 +54,18 @@ var initDialog = function() {
 	
 	console.log("finished initiating dialog");
 };
+
+var loadForm = function() {
+	console.log('started loading form');
+
+	initDialog();
+
+	$("#tester-button").on("click", function(event) {
+		event.preventDefault();
+		chooseNoTool();
+		console.log("openning dialog");
+		dialog.dialog("open");
+	});
+
+	console.log('finished loading form');
+}
