@@ -35,10 +35,10 @@ var initBoardTesterDialog = function() {
 		buttons : {
 			"Ok" : function() {
 				applyBoardSize();
-				boardTesterDialog.dialog("close");
+				$(this).dialog("close");
 			},
 			Cancel : function() {
-				boardTesterDialog.dialog("close");
+				$(this).dialog("close");
 			}
 		},
 		close : function() {
@@ -49,17 +49,38 @@ var initBoardTesterDialog = function() {
 	console.log("finished initiating board tester dialog");
 };
 
-var loadBoardTesterDialog = function() {
-	console.log('started loading board tester dialog');
+var clearAllWarningDialog;
+var clearAllWarningNextDialog = null;
 
-	initBoardTesterDialog();
+var clearAll = function() {
+	$(".board-cell").css('background-color', 'white');
+}
 
-	$("#tester-button").on("click", function(event) {
-		event.preventDefault();
-		chooseNoTool();
-		console.log("openning dialog");
-		boardTesterDialog.dialog("open");
+var initClearAllWarningDialog = function() {
+	console.log("started initiating clear-all warning dialog");
+
+	clearAllWarningDialog = $("#clear-all-warning-dialog").dialog({
+		autoOpen : false,
+		// height : 350,
+		width : 500,
+		resizable: false,
+		modal : true,
+		buttons : {
+			"Ok" : function() {
+				clearAll();
+				if (clearAllWarningNextDialog != null) {
+					clearAllWarningNextDialog.dialog("open");
+				}
+				$(this).dialog("close");
+			},
+			Cancel : function() {
+				$(this).dialog("close");
+			}
+		},
+		close : function() {
+			console.log("close ...");
+		}
 	});
 
-	console.log('finished loading board tester dialog');
+	console.log("finished initiating clear-all warning dialog");
 }

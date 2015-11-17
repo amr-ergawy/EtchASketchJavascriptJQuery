@@ -36,10 +36,6 @@ var applyTool = function(gridCell) {
 	}
 }
 
-var clearAll = function() {
-	$(".board-cell").css('background-color', 'white');
-}
-
 var initTools = function() {
 	console.log('started initiating tools');
 
@@ -56,13 +52,19 @@ var initTools = function() {
 	$("#clear-all-button").on("click", function(event) {
 		event.preventDefault();
 		chooseNoTool();
-		clearAll();
+		clearAllWarningDialog.dialog("open");
 	});
 
 	$("#resize-grid-button").on("click", function(event) {
 		event.preventDefault();
 		chooseNoTool();
-		
+		clearAllWarningDialog.dialog("open");
+	});
+
+	$("#tester-button").on("click", function(event) {
+		event.preventDefault();
+		chooseNoTool();
+		boardTesterDialog.dialog("open");
 	});
 
 	$(".board-cell").mouseover(function(event) {
