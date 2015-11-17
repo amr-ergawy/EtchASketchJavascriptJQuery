@@ -2,8 +2,8 @@ var rows = 50;
 var cols = 50;
 var dialog;
 
-var initDialog = function() {
-	console.log("started initiating dialog");
+var initBoardTesterDialog = function() {
+	console.log("started initiating board tester dialog");
 	
 	$(".spinner").bind("keydown", function (event) {
 		event.preventDefault();
@@ -26,7 +26,7 @@ var initDialog = function() {
 		console.log('applying board size: '+rows+', '+cols);
 	};
 	
-	dialog = $("#board-size-dialog-form").dialog({
+	dialog = $("#board-tester-dialog").dialog({
 		autoOpen : false,
 		// height : 350,
 		width : 500,
@@ -55,10 +55,10 @@ var initDialog = function() {
 	console.log("finished initiating dialog");
 };
 
-var loadForm = function() {
+var loadBoardTesterDialog = function() {
 	console.log('started loading form');
 
-	initDialog();
+	initBoardTesterDialog();
 
 	$("#tester-button").on("click", function(event) {
 		event.preventDefault();

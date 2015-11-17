@@ -1,13 +1,13 @@
-#board-size-dialog-form form {
+#board-tester-dialog form {
 	/**
 	 * 	enabled border only for testing.
 	 */
 	/* border: 1px solid black; */
 
-	text-align:center;
+	text-align: center;
 }
 
-#board-size-dialog-form form fieldset {
+#board-tester-dialog form fieldset {
 	/**
 	 * 	enabled border only for testing.
 	 */

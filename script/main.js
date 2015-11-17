@@ -18,7 +18,7 @@ $(document).ready(function() {
 
 	boardLayout();
 
-	loadForm();
+	loadBoardTesterDialog();
 
 	initTools();
 

@@ -14,10 +14,10 @@
 	<script src="jquery/jquery-1.10.2.js"></script>
 	<script src="jquery/jquery-ui-1.11.4.js"></script>
 
-	<!-- start: including the style and script for board-size dialog -->
-	<link type="text/css" rel="stylesheet" href="css/size-dialog.css"/>
-	<script type="text/javascript" src="script/size-dialog.js"></script>
-	<!-- end: including the style and script for board-size dialog -->
+	<!-- start: including the style and script for dialogs -->
+	<link type="text/css" rel="stylesheet" href="css/dialogs.css"/>
+	<script type="text/javascript" src="script/dialogs.js"></script>
+	<!-- end: including the style and script for dialogs -->
 
 	<!-- start: including the style and script for the color-picker -->
 	<link type="text/css" rel="stylesheet" href="css/color-picker.css"/>
@@ -51,14 +51,21 @@
 	</div>
 </body>
 
-<!-- <div id="size-dialog"></div> -->
-<div id="board-size-dialog-form" title="Choose board size">
+<div id="board-tester-dialog" title="Choose board size">
 	<form>
 		<fieldset>
 			<p>Rows</p>
 			<input type="text" id="rowsSpinner" class="spinner" value="50" />
 			<p >Columns</p>
 			<input type="text" id="colsSpinner" class="spinner" value="50" />
+		</fieldset>
+	</form>
+</div>
+
+<div id="clear-all-warning-dialog" title="Choose board size">
+	<form>
+		<fieldset>
+			<p>This will remove the whole drawing. Proceed?</p>
 		</fieldset>
 	</form>
 </div>
