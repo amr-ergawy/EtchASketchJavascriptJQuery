@@ -1,17 +1,11 @@
-#board-tester-dialog form {
+/* #board-tester-dialog form { */
+.ui-dialog {
 	/**
 	 * 	enabled border only for testing.
 	 */
 	/* border: 1px solid black; */
 
 	text-align: center;
-}
-
-#board-tester-dialog form fieldset {
-	/**
-	 * 	enabled border only for testing.
-	 */
-	/* border: 1px solid green; */
 }
 
 .spinner {

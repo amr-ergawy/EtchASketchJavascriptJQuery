@@ -1,6 +1,6 @@
 var rows = 50;
 var cols = 50;
-var dialog;
+var boardTesterDialog;
 
 var initBoardTesterDialog = function() {
 	console.log("started initiating board tester dialog");
@@ -26,7 +26,7 @@ var initBoardTesterDialog = function() {
 		console.log('applying board size: '+rows+', '+cols);
 	};
 	
-	dialog = $("#board-tester-dialog").dialog({
+	boardTesterDialog = $("#board-tester-dialog").dialog({
 		autoOpen : false,
 		// height : 350,
 		width : 500,
@@ -35,28 +35,22 @@ var initBoardTesterDialog = function() {
 		buttons : {
 			"Ok" : function() {
 				applyBoardSize();
-				dialog.dialog("close");
+				boardTesterDialog.dialog("close");
 			},
 			Cancel : function() {
-				dialog.dialog("close");
+				boardTesterDialog.dialog("close");
 			}
 		},
 		close : function() {
 			console.log("close ...");
-			form[0].reset();
 		}
 	});
 	
-	var form = dialog.find("form").on("submit", function(event) {
-		event.preventDefault();
-		applyBoardSize();
-	});
-	
-	console.log("finished initiating dialog");
+	console.log("finished initiating board tester dialog");
 };
 
 var loadBoardTesterDialog = function() {
-	console.log('started loading form');
+	console.log('started loading board tester dialog');
 
 	initBoardTesterDialog();
 
@@ -64,8 +58,8 @@ var loadBoardTesterDialog = function() {
 		event.preventDefault();
 		chooseNoTool();
 		console.log("openning dialog");
-		dialog.dialog("open");
+		boardTesterDialog.dialog("open");
 	});
 
-	console.log('finished loading form');
+	console.log('finished loading board tester dialog');
 }
