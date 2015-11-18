@@ -20,12 +20,6 @@ var initBoardTesterDialog = function() {
 	rowsSpinner.spinner(spinnerOptions);
 	colsSpinner.spinner(spinnerOptions);
 	
-	var applyBoardSize = function () {
-		rows = rowsSpinner.val();
-		cols = colsSpinner.val();
-		console.log('applying board size: '+rows+', '+cols);
-	};
-	
 	boardTesterDialog = $("#board-tester-dialog").dialog({
 		autoOpen : false,
 		// height : 350,
@@ -34,7 +28,10 @@ var initBoardTesterDialog = function() {
 		modal : true,
 		buttons : {
 			"Ok" : function() {
-				applyBoardSize();
+				rows = rowsSpinner.val();
+				cols = colsSpinner.val();
+				console.log('attempting to apply board size: '+rows+', '+cols);
+				applyBoardSize(rows, cols);
 				$(this).dialog("close");
 			},
 			Cancel : function() {
@@ -78,6 +75,7 @@ var initClearAllWarningDialog = function() {
 			}
 		},
 		close : function() {
+			clearAllWarningNextDialog = null;
 			console.log("close ...");
 		}
 	});

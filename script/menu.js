@@ -64,7 +64,8 @@ var initTools = function() {
 	$("#tester-button").on("click", function(event) {
 		event.preventDefault();
 		chooseNoTool();
-		boardTesterDialog.dialog("open");
+		clearAllWarningNextDialog = boardTesterDialog;
+		clearAllWarningDialog.dialog("open");
 	});
 
 	$(".board-cell").mouseover(function(event) {

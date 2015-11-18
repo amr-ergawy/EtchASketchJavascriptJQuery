@@ -10,13 +10,7 @@ const DEFAULT_COLS = 10;
 $(document).ready(function() {
 	console.log('handling document-ready ...');
 
-	// verifyBoardSize(DEFAULT_ROWS, DEFAULT_COLS);
-	verifyBoardSize(40, 80);
-	// verifyBoardSize(MAX_ROWS, MAX_COLS);
-
-	calcBoardVirtualDims();
-
-	boardLayout();
+	applyBoardSize(40, 80);
 
 	initBoardTesterDialog();
 
@@ -28,6 +22,17 @@ $(document).ready(function() {
 
 	console.log('handled document-ready');
 });
+
+var applyBoardSize = function (paramRows, paramCols) {
+
+	// verifyBoardSize(DEFAULT_ROWS, DEFAULT_COLS);
+	verifyBoardSize(paramRows, paramCols);
+	// verifyBoardSize(MAX_ROWS, MAX_COLS);
+
+	calcBoardVirtualDims();
+
+	boardLayout();
+};
 
 var rows;
 var cols;
@@ -120,6 +125,11 @@ var boardLayout = function() {
 	console.log('row-height: '+rowHeight+', col-width: '+colWidth);
 
 	var board = document.getElementById("content");
+
+	while(board.hasChildNodes()){
+		board.removeChild(board.firstChild);
+	}
+
 	var boardRowNode;
 	for (var i = 0; i < rows; i++) {
 		if (logDims) console.log('adding row: '+i);
