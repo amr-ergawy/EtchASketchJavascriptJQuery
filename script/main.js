@@ -7,10 +7,15 @@ const MAX_COLS = 100;
 const DEFAULT_ROWS = 10;
 const DEFAULT_COLS = 10;
 
+var rows;
+var cols;
+
 $(document).ready(function() {
 	console.log('handling document-ready ...');
 
-	applyBoardSize(40, 80);
+	loadCachedVerifiedBoardSize();
+
+	applyBoardSize(rows, cols);
 
 	initBoardTesterDialog();
 
@@ -23,19 +28,37 @@ $(document).ready(function() {
 	console.log('handled document-ready');
 });
 
+const rowsCookie = "rows";
+const colsCookie = "cols";
+
+var loadCachedVerifiedBoardSize = function() {
+
+	var cachedRows = getCookie(rowsCookie);
+	var cachedCols = getCookie(colsCookie);
+
+	if (cachedRows == "" || cachedCols == "") {
+		rows = 40;
+		cols = 80;
+	} else {
+		rows = cachedRows;
+		cols = cachedCols;
+	}
+
+	console.log("loaded cached-verified-board-size: "+rows+"X"+cols);
+}
+
 var applyBoardSize = function (paramRows, paramCols) {
 
 	// verifyBoardSize(DEFAULT_ROWS, DEFAULT_COLS);
 	verifyBoardSize(paramRows, paramCols);
 	// verifyBoardSize(MAX_ROWS, MAX_COLS);
 
+	updateCachedVerifiedBoardSize();
+
 	calcBoardVirtualDims();
 
 	boardLayout();
 };
-
-var rows;
-var cols;
 
 var verifyBoardSize = function(paramRows, paramCols) {
 	rows = paramRows;
@@ -53,6 +76,17 @@ var verifyBoardSize = function(paramRows, paramCols) {
 	}
 
 	console.log('board will be layedout with (rows, cols) = ('+rows+', '+cols+')');
+}
+
+var updateCachedVerifiedBoardSize = function () {
+
+	deleteCookie(rowsCookie);
+	deleteCookie(colsCookie);
+
+	setCookie(rowsCookie, rows, 1);
+	setCookie(colsCookie, cols, 1);
+
+	console.log("updated cached-verified-board-size: "+rows+"X"+cols);
 }
 
 var MAX_BOARD_WIDTH_VIRTUAL_UNITS = 90; // Initialization maps to real percentage of 90%.
