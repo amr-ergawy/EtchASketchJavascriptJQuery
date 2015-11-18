@@ -62,10 +62,10 @@ var initTools = function() {
 		clearAllWarningDialog.dialog("open");
 	});
 
-	$("#manual-resize-button").on("click", function(event) {
+	$("#custom-resize-button").on("click", function(event) {
 		event.preventDefault();
 		chooseNoTool();
-		clearAllWarningNextDialog = manualResizeDialog;
+		clearAllWarningNextDialog = customResizeDialog;
 		clearAllWarningDialog.dialog("open");
 	});
 

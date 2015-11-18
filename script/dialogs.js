@@ -72,10 +72,10 @@ var initAutoResizeDialog = function() {
 	console.log("finished initiating auto resize dialog");
 };
 
-var manualResizeDialog;
+var customResizeDialog;
 
-var initManualResizeDialog = function() {
-	console.log("started initiating manual resize dialog");
+var initCustomResizeDialog = function() {
+	console.log("started initiating custom resize dialog");
 
 	$(".spinner").bind("keydown", function (event) {
 		event.preventDefault();
@@ -92,7 +92,7 @@ var initManualResizeDialog = function() {
 	rowsSpinner.spinner(spinnerOptions);
 	colsSpinner.spinner(spinnerOptions);
 
-	manualResizeDialog = $("#manual-resize-dialog").dialog({
+	customResizeDialog = $("#custom-resize-dialog").dialog({
 		autoOpen : false,
 		// height : 350,
 		width : 500,
@@ -115,5 +115,5 @@ var initManualResizeDialog = function() {
 		}
 	});
 
-	console.log("finished initiating manual resize dialog");
+	console.log("finished initiating custom resize dialog");
 };

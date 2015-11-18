@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 	initAutoResizeDialog();
 
-	initManualResizeDialog();
+	initCustomResizeDialog();
 
 	initTools();
 

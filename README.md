@@ -4,7 +4,7 @@ This is an Etch-A-Sketch board inspired by the JavaScript and JQuery project of 
 
 The board layout is made smart enough to fit both chosen rowsXcols size and the browser window.
 
-The "Tester" button can be used to test the flexible board layout.
+The "Custom resize" button can be used to test the flexible board layout.
 
 Because of using HSL colors, the board is compatible with IE9+, Firefox, Chrome, Safari, and in Opera 10+. 
 
