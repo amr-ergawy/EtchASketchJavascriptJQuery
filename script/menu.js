@@ -58,6 +58,7 @@ var initTools = function() {
 	$("#auto-resize-button").on("click", function(event) {
 		event.preventDefault();
 		chooseNoTool();
+		clearAllWarningNextDialog = autoResizeDialog;
 		clearAllWarningDialog.dialog("open");
 	});
 

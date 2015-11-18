@@ -1,51 +1,3 @@
-var rows = 50;
-var cols = 50;
-var manualResizeDialog;
-
-var initManualResizeDialog = function() {
-	console.log("started initiating board tester dialog");
-	
-	$(".spinner").bind("keydown", function (event) {
-		event.preventDefault();
-	});
-	
-	var spinnerOptions = {
-		icons: { up: "ui-icon-plus", down: "ui-icon-minus"},
-		min: 10, max: 100
-	};
-	
-	var rowsSpinner = $("#rowsSpinner");
-	var colsSpinner = $("#colsSpinner");
-	
-	rowsSpinner.spinner(spinnerOptions);
-	colsSpinner.spinner(spinnerOptions);
-	
-	manualResizeDialog = $("#manual-resize-dialog").dialog({
-		autoOpen : false,
-		// height : 350,
-		width : 500,
-		resizable: false,
-		modal : true,
-		buttons : {
-			"Ok" : function() {
-				rows = rowsSpinner.val();
-				cols = colsSpinner.val();
-				console.log('attempting to apply board size: '+rows+', '+cols);
-				applyBoardSize(rows, cols);
-				$(this).dialog("close");
-			},
-			Cancel : function() {
-				$(this).dialog("close");
-			}
-		},
-		close : function() {
-			console.log("close ...");
-		}
-	});
-	
-	console.log("finished initiating board tester dialog");
-};
-
 var clearAllWarningDialog;
 var clearAllWarningNextDialog = null;
 
@@ -82,3 +34,86 @@ var initClearAllWarningDialog = function() {
 
 	console.log("finished initiating clear-all warning dialog");
 }
+
+var rows = 50;
+var cols = 50;
+
+var autoResizeDialog;
+
+var initAutoResizeDialog = function() {
+	console.log("started initiating auto resize dialog");
+
+	autoResizeDialog = $("#auto-resize-dialog").dialog({
+		autoOpen : false,
+		// height : 350,
+		width : 500,
+		resizable: false,
+		modal : true,
+		buttons : {
+			"Ok" : function() {
+				var autoResizeRadio = $("input:radio[name ='auto-resize-radio']:checked").val();
+				console.log('checked autoResizeRadio: '+autoResizeRadio);
+				// TODO call the auto resize logic instead of this.
+				rows = 40;
+				cols = 80;
+				console.log('attempting to apply board size: '+rows+', '+cols);
+				applyBoardSize(rows, cols);
+				$(this).dialog("close");
+			},
+			Cancel : function() {
+				$(this).dialog("close");
+			}
+		},
+		close : function() {
+			console.log("close ...");
+		}
+	});
+
+	console.log("finished initiating auto resize dialog");
+};
+
+var manualResizeDialog;
+
+var initManualResizeDialog = function() {
+	console.log("started initiating manual resize dialog");
+
+	$(".spinner").bind("keydown", function (event) {
+		event.preventDefault();
+	});
+
+	var spinnerOptions = {
+		icons: { up: "ui-icon-plus", down: "ui-icon-minus"},
+		min: 10, max: 100
+	};
+
+	var rowsSpinner = $("#rowsSpinner");
+	var colsSpinner = $("#colsSpinner");
+
+	rowsSpinner.spinner(spinnerOptions);
+	colsSpinner.spinner(spinnerOptions);
+
+	manualResizeDialog = $("#manual-resize-dialog").dialog({
+		autoOpen : false,
+		// height : 350,
+		width : 500,
+		resizable: false,
+		modal : true,
+		buttons : {
+			"Ok" : function() {
+				rows = rowsSpinner.val();
+				cols = colsSpinner.val();
+				console.log('attempting to apply board size: '+rows+', '+cols);
+				applyBoardSize(rows, cols);
+				$(this).dialog("close");
+			},
+			Cancel : function() {
+				$(this).dialog("close");
+			}
+		},
+		close : function() {
+			console.log("close ...");
+		}
+	});
+
+	console.log("finished initiating manual resize dialog");
+};

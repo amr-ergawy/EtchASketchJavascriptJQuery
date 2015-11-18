@@ -17,9 +17,11 @@ $(document).ready(function() {
 
 	applyBoardSize(rows, cols);
 
-	initManualResizeDialog();
-
 	initClearAllWarningDialog();
+
+	initAutoResizeDialog();
+
+	initManualResizeDialog();
 
 	initTools();
 
