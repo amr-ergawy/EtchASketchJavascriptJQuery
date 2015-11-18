@@ -1,8 +1,8 @@
 var rows = 50;
 var cols = 50;
-var boardTesterDialog;
+var manualResizeDialog;
 
-var initBoardTesterDialog = function() {
+var initManualResizeDialog = function() {
 	console.log("started initiating board tester dialog");
 	
 	$(".spinner").bind("keydown", function (event) {
@@ -20,7 +20,7 @@ var initBoardTesterDialog = function() {
 	rowsSpinner.spinner(spinnerOptions);
 	colsSpinner.spinner(spinnerOptions);
 	
-	boardTesterDialog = $("#board-tester-dialog").dialog({
+	manualResizeDialog = $("#manual-resize-dialog").dialog({
 		autoOpen : false,
 		// height : 350,
 		width : 500,

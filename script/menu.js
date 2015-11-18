@@ -55,16 +55,16 @@ var initTools = function() {
 		clearAllWarningDialog.dialog("open");
 	});
 
-	$("#resize-grid-button").on("click", function(event) {
+	$("#auto-resize-button").on("click", function(event) {
 		event.preventDefault();
 		chooseNoTool();
 		clearAllWarningDialog.dialog("open");
 	});
 
-	$("#tester-button").on("click", function(event) {
+	$("#manual-resize-button").on("click", function(event) {
 		event.preventDefault();
 		chooseNoTool();
-		clearAllWarningNextDialog = boardTesterDialog;
+		clearAllWarningNextDialog = manualResizeDialog;
 		clearAllWarningDialog.dialog("open");
 	});
 
