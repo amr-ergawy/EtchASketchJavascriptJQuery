@@ -58,6 +58,8 @@ var applyBoardSize = function (paramRows, paramCols) {
 	calcBoardVirtualDims();
 
 	boardLayout();
+
+	initBoardCellMouseHandler();
 };
 
 var verifyBoardSize = function(paramRows, paramCols) {

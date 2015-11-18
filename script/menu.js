@@ -68,22 +68,6 @@ var initTools = function() {
 		clearAllWarningDialog.dialog("open");
 	});
 
-	$(".board-cell").mouseover(function(event) {
-		event.preventDefault();
-		if (clickMouseButtonDown) {
-			// on left-hand mouse configs, the values are inverted.
-			applyTool($(this));
-		}
-	});
-
-	$(".board-cell").click(function(event) {
-		event.preventDefault();
-		if (event.button == 0) {
-			// on left-hand mouse configs, the values are inverted.
-			applyTool($(this));
-		}
-	});
-
 	$("body").mousedown(function(event) {
 		// Logging is only enabled for debugging.
 		// console.log("button down: "+event.button);
@@ -105,4 +89,26 @@ var initTools = function() {
 	});
 
 	console.log('finished initiating tools');
+}
+
+var initBoardCellMouseHandler = function() {
+	console.log('started initiating board-cell mouse handlers');
+
+	$(".board-cell").mouseover(function(event) {
+		event.preventDefault();
+		if (clickMouseButtonDown) {
+			// on left-hand mouse configs, the values are inverted.
+			applyTool($(this));
+		}
+	});
+
+	$(".board-cell").click(function(event) {
+		event.preventDefault();
+		if (event.button == 0) {
+			// on left-hand mouse configs, the values are inverted.
+			applyTool($(this));
+		}
+	});
+
+	console.log('finished initiating board-cell mouse handlers');
 }
