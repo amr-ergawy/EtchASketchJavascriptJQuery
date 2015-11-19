@@ -13,7 +13,7 @@ Zooming is not processed in any custom way.
 Tested on IE, Chrome, and FireFox.
 
 ISSUES:
-- handling window reizing is not implemented in an efficient way.
+- handling window resizing is not implemented in an efficient way.
 
 TODO:
 - find a more correct and efficient way for resizing. As a start it shall do some effect to the browser window like that of the reload method.
