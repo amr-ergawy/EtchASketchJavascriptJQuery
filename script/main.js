@@ -11,6 +11,10 @@ var rows;
 var cols;
 
 $(document).ready(function() {
+	handleDocumentReady();
+});
+
+var handleDocumentReady = function () {
 	console.log('handling document-ready ...');
 
 	loadCachedVerifiedBoardSize();
@@ -28,7 +32,7 @@ $(document).ready(function() {
 	loadColorPicker();
 
 	console.log('handled document-ready');
-});
+}
 
 const rowsCookie = "rows";
 const colsCookie = "cols";
@@ -251,4 +255,18 @@ var autoResize = function(autoResizeChoice) {
 	console.log("auto resizing to: "+rows+"x"+cols);
 
 	applyBoardSize(rows, cols);
+}
+
+var resizingTimeout;
+
+$(window).resize(function() {
+	clearTimeout(resizingTimeout);
+	resizingTimeout = setTimeout(doneResizing, 500);
+});
+
+function doneResizing(){
+	console.log("done resizing");
+
+	// TODO find a better way for this.
+	location.reload();
 }

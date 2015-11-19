@@ -55,6 +55,7 @@ var initAutoResizeDialog = function() {
 				console.log('checked autoResizeRadio: '+autoResizeRadio);
 				autoResize(autoResizeRadio);
 				$(this).dialog("close");
+				doneResizing();
 			},
 			Cancel : function() {
 				$(this).dialog("close");
@@ -101,6 +102,7 @@ var initCustomResizeDialog = function() {
 				console.log('attempting to apply board size: '+rows+', '+cols);
 				applyBoardSize(rows, cols);
 				$(this).dialog("close");
+				doneResizing();
 			},
 			Cancel : function() {
 				$(this).dialog("close");
