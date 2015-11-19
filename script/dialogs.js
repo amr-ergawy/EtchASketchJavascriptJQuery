@@ -53,11 +53,7 @@ var initAutoResizeDialog = function() {
 			"Ok" : function() {
 				var autoResizeRadio = $("input:radio[name ='auto-resize-radio']:checked").val();
 				console.log('checked autoResizeRadio: '+autoResizeRadio);
-				// TODO call the auto resize logic instead of this.
-				rows = 40;
-				cols = 80;
-				console.log('attempting to apply board size: '+rows+', '+cols);
-				applyBoardSize(rows, cols);
+				autoResize(autoResizeRadio);
 				$(this).dialog("close");
 			},
 			Cancel : function() {

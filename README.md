@@ -1,4 +1,4 @@
-# EtchASketchJavascriptJQuery-TheOdinProject
+# EtchASketchJavascriptJQuery
 
 This is an Etch-A-Sketch board inspired by the JavaScript and JQuery project of the web development course TheOdinProject, http://www.theodinproject.com/. 
 

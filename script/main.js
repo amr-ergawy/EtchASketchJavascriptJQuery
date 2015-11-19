@@ -99,15 +99,22 @@ var MAX_BOARD_HEIGHT_VIRTUAL_UNITS = 90; // Initialization maps to real percenta
 var BOARD_WIDTH_PERCENT;
 var BOARD_HEIGHT_PERCENT;
 
-var calcBoardVirtualDims = function() {
+var windowInnerAspectRatio = 1;
+
+var calcWindowInnerAspectRatio = function() {
 	/*
 	 * The calculation here use the window inner dimensions as an approximation
 	 * of the relation among the width and height.
 	 */
 
 	console.log('window inner dims: '+window.innerWidth+"x"+window.innerHeight)
-	var windowInnerAspectRatio = window.innerWidth/window.innerHeight;
+	windowInnerAspectRatio = window.innerWidth/window.innerHeight;
 	console.log('window inner aspect-ration: '+windowInnerAspectRatio);
+}
+
+var calcBoardVirtualDims = function() {
+
+	calcWindowInnerAspectRatio();
 
 	if (windowInnerAspectRatio > 1) {
 		// The window width is larger than its height.
@@ -215,4 +222,33 @@ var createBoardCell = function() {
 	if (logDims) console.log(divNode.style.width+', '+divNode.style.height);
 
 	return divNode;
+}
+
+const AUTO_RESIZE_SMALL = 0;
+const AUTO_RESIZE_NORMAL = 1;
+const AUTO_RESIZE_LARGE = 2;
+
+const AUTO_RESIZE_SHORTER_EDGE_SIZES = [10, 20, 40];
+
+var autoResize = function(autoResizeChoice) {
+
+	calcWindowInnerAspectRatio();
+
+	if (windowInnerAspectRatio > 1) {
+		// The window width is larger than its height.
+		rows = AUTO_RESIZE_SHORTER_EDGE_SIZES[autoResizeChoice];
+		cols = 2*rows;
+	} else if (windowInnerAspectRatio < 1) {
+		// The window width is less than its height.
+		cols = AUTO_RESIZE_SHORTER_EDGE_SIZES[autoResizeChoice];
+		rows = 2*cols;
+	} else {
+		// The window width equals its height.
+		cols = AUTO_RESIZE_SHORTER_EDGE_SIZES[autoResizeChoice];
+		rows = cols;
+	}
+
+	console.log("auto resizing to: "+rows+"x"+cols);
+
+	applyBoardSize(rows, cols);
 }
