@@ -29,8 +29,6 @@ var handleDocumentReady = function () {
 
 	initTools();
 
-	loadColorPicker();
-
 	console.log('handled document-ready');
 }
 
@@ -55,18 +53,21 @@ var loadCachedVerifiedBoardSize = function() {
 
 var applyBoardSize = function (paramRows, paramCols) {
 
-	// verifyBoardSize(DEFAULT_ROWS, DEFAULT_COLS);
-	verifyBoardSize(paramRows, paramCols);
-	// verifyBoardSize(MAX_ROWS, MAX_COLS);
-
-	updateCachedVerifiedBoardSize();
+	verifyAndCacheBoardSize(paramRows, paramCols);
 
 	calcBoardVirtualDims();
 
 	boardLayout();
 
 	initBoardCellMouseHandler();
-};
+}
+
+var verifyAndCacheBoardSize = function(paramRows, paramCols) {
+
+	verifyBoardSize(paramRows, paramCols);
+
+	updateCachedVerifiedBoardSize();
+}
 
 var verifyBoardSize = function(paramRows, paramCols) {
 	rows = paramRows;
@@ -254,7 +255,7 @@ var autoResize = function(autoResizeChoice) {
 
 	console.log("auto resizing to: "+rows+"x"+cols);
 
-	applyBoardSize(rows, cols);
+	verifyAndCacheBoardSize(rows, cols);
 }
 
 var resizingTimeout;

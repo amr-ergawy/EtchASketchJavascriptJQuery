@@ -100,7 +100,7 @@ var initCustomResizeDialog = function() {
 				rows = rowsSpinner.val();
 				cols = colsSpinner.val();
 				console.log('attempting to apply board size: '+rows+', '+cols);
-				applyBoardSize(rows, cols);
+				verifyAndCacheBoardSize(rows, cols);
 				$(this).dialog("close");
 				doneResizing();
 			},

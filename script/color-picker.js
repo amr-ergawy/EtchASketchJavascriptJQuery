@@ -1,3 +1,7 @@
+$(document).ready(function() {
+	loadColorPicker();
+});
+
 var color = "hsl(0, 0%, 50%)";
 
 var loadColorPicker = function() {
