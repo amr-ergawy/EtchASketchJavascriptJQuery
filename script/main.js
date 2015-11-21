@@ -98,8 +98,8 @@ var updateCachedVerifiedBoardSize = function () {
 	console.log("updated cached-verified-board-size: "+rows+"X"+cols);
 }
 
-var MAX_BOARD_WIDTH_VIRTUAL_UNITS = 90; // Initialization maps to real percentage of 90%.
-var MAX_BOARD_HEIGHT_VIRTUAL_UNITS = 90; // Initialization maps to real percentage of 90%.
+var MAX_BOARD_WIDTH_VIRTUAL_UNITS;
+var MAX_BOARD_HEIGHT_VIRTUAL_UNITS;
 
 var BOARD_WIDTH_PERCENT;
 var BOARD_HEIGHT_PERCENT;
@@ -120,6 +120,9 @@ var calcWindowInnerAspectRatio = function() {
 var calcBoardVirtualDims = function() {
 
 	calcWindowInnerAspectRatio();
+
+	MAX_BOARD_WIDTH_VIRTUAL_UNITS = 90; // Initialization maps to real percentage of 90%.
+	MAX_BOARD_HEIGHT_VIRTUAL_UNITS = 90; // Initialization maps to real percentage of 90%.
 
 	if (windowInnerAspectRatio > 1) {
 		// The window width is larger than its height.
@@ -266,8 +269,14 @@ $(window).resize(function() {
 });
 
 function doneResizing(){
-	console.log("done resizing");
 
-	// TODO find a better way for this.
-	location.reload();
+	console.log("started resizing board");
+
+	calcBoardVirtualDims();
+
+	boardLayout();
+
+	initBoardCellMouseHandler();
+
+	console.log("finished resizing board");
 }
