@@ -265,12 +265,54 @@ var resizingTimeout;
 
 $(window).resize(function() {
 	clearTimeout(resizingTimeout);
-	resizingTimeout = setTimeout(doneResizing, 500);
+	resizingTimeout = setTimeout(doneWindowResizing, 100);
 });
 
-function doneResizing(){
+var doneWindowResizing = function() {
+	console.log("started resizing on window resize");
 
-	console.log("started resizing board");
+	calcBoardVirtualDims();
+
+	refreshGridOnWindowResize();
+
+	console.log("finished resizing on window resize");
+}
+
+var refreshGridOnWindowResize = function() {
+
+	console.log('started refreshing board on window resize');
+
+	chooseNoTool();
+
+	rowHeight = BOARD_HEIGHT_PERCENT/rows;
+	colWidth = (100-(ONE_SIDE_MARGIN*cols))/cols; // (100-(ONE_SIDE_MARGIN*cols))/cols;
+
+	console.log('row-height: '+rowHeight+', col-width: '+colWidth);
+
+	var board = document.getElementById("content");
+
+	var boardRows = board.children;
+	var boardRowCells;
+
+	var i, j;
+	for (i = 0; i < boardRows.length; i++) {
+		boardRows[i].style.width = BOARD_WIDTH_PERCENT+"%";
+		boardRows[i].style.height = rowHeight+"%";
+
+		boardRowCells = boardRows[i].children;
+
+		for (j = 0; j < boardRowCells.length; j++) {
+			boardRowCells[j].style.width = colWidth+"%";
+			boardRowCells[j].style.height = cellHeight+"%";
+		}
+	}
+
+	console.log('finished refreshing board on window resize');
+}
+
+var doneGridResizing = function (){
+
+	console.log("started resizing on grid resize");
 
 	calcBoardVirtualDims();
 
@@ -278,5 +320,5 @@ function doneResizing(){
 
 	initBoardCellMouseHandler();
 
-	console.log("finished resizing board");
+	console.log("finished resizing on grid resize");
 }
