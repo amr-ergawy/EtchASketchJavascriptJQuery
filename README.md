@@ -8,7 +8,7 @@ The "Custom detail" button can be used to test the flexible board layout.
 
 Because of using HSL colors, the board is compatible with IE9+, Firefox, Chrome, Safari, and in Opera 10+. 
 
-TODO: write about window resizing and grid resizing.
+Window resizing is done in an optimizied way using only a portion of the auto-fitting computation of grid resizing.
 
 Zooming is not processed in any custom way.
 
