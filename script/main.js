@@ -29,6 +29,8 @@ var handleDocumentReady = function () {
 
 	initTools();
 
+	enableOnBeforeUnload();
+
 	console.log('handled document-ready');
 }
 
@@ -267,7 +269,7 @@ $(window).resize(function() {
 	clearTimeout(resizingTimeout);
 	resizingTimeout = setTimeout(doneWindowResizing, 100);
 });
-
+enableOnBeforeUnload
 var doneWindowResizing = function() {
 	console.log("started resizing on window resize");
 
@@ -310,7 +312,7 @@ var refreshGridOnWindowResize = function() {
 	console.log('finished refreshing board on window resize');
 }
 
-var doneGridResizing = function (){
+var doneGridResizing = function () {
 
 	console.log("started resizing on grid resize");
 
@@ -321,4 +323,10 @@ var doneGridResizing = function (){
 	initBoardCellMouseHandler();
 
 	console.log("finished resizing on grid resize");
+}
+
+var enableOnBeforeUnload = function () {
+	window.onbeforeunload = function(e) {
+		return 'You are leaving or refreshing the page, if you continue you will lose the drawing.';
+	};
 }
